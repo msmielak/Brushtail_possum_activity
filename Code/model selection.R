@@ -14,37 +14,6 @@ library(tidyverse)
 #### Modelling daily detection rates
 ####################################
 
-# # check collinearity
-# 
-# modelCheck <- glmmTMB(data=dailyDetectionsStand, family ="nbinom1", 
-#                       
-#                       formula = BTP~
-#                         
-#                         day+
-#                         
-#                         Site+
-#                         
-#                         meanTempAtNight+
-#                         
-#                         meanTempAt18+
-#                         
-#                         nightLength+
-#                         
-#                         Rainfall+
-#                         
-#                         meanMoonIllumination+
-#                         
-#                         maxMoonIllumination+
-#                         
-#                         meanCloudCover+
-#                         
-#                         meanMoonFraction
-#                       
-# )
-# 
-# check_collinearity(modelCheck)
-
-#Model selection - dredging wih MuMIn
 
 # global model with all the predictors
 
@@ -60,14 +29,9 @@ library(tidyverse)
                          
                          meanTempAtNight*Rainfall+
                          
-                   #      nightLength*Rainfall+
-                        
                          meanMoonIllumination*meanCloudCover
                          
-                         # meanMoonFraction*meanCloudCover+
-                         # 
-                         # maxMoonIllumination*meanCloudCover
-                         
+                        
                       )
                        
 
@@ -194,8 +158,6 @@ taModel_global <- glmmTMB(data=BTP_model_st1, family=beta_family(link = "logit")
                              
                             meanTempAtNight*meanCloudCover+
                              
-                          #  meanTempAtNight*Rainfall+
-                             
                             lunarNoonNightFraction*meanMoonIllumination+
                             
                             (1|Camera)
@@ -260,8 +222,6 @@ taModel2 <- glmmTMB(data=BTP_model_st1, family=beta_family(link = "logit"), na.a
                       nightLength+
                       
                       meanTempAtNight*meanCloudCover+
-                      
-                  
                       
                       lunarNoonNightFraction*meanMoonIllumination+
                       

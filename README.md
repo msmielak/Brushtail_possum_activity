@@ -1,4 +1,4 @@
-# BBrushtail possum terrestrial activity patterns are driven by climatic conditions, breeding and moonlight intensity
+# Brushtail possum terrestrial activity patterns are driven by climatic conditions, breeding and moonlight intensity
 
 
 This is a public data and code repository for "Brushtail possum terrestrial activity patterns are driven by climatic conditions, breeding and moonlight intensity"
